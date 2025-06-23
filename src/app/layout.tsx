@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lato, Nunito } from "next/font/google";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const getLato = Lato({
+  variable: "--font--lato",
   subsets: ["latin"],
+  weight: ['400', "700"]
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const getNunito = Nunito({
+  variable: "--font--nunito",
   subsets: ["latin"],
+  weight: ['400', "600", "700"]
 });
 
 export const metadata: Metadata = {
@@ -23,9 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="pt-BR">
+      <body className={`root ${getLato.variable} ${getNunito.variable}`}>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

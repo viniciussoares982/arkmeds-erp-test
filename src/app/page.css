@@ -1,0 +1,24 @@
+.title {
+  margin-top: 36px;
+  font-family: var(--font--nunito);
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.title::before {
+  content: '';
+  width: 20px;
+  height: 6px;
+  background: #D99F00;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.cards {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

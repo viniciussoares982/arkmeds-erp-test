@@ -1,0 +1,24 @@
+.cta {
+  all: unset;
+  height: 42px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  background: #D99F00;
+  font-family: var(--font--lato);
+  color: var(--color-primary-900);
+  transition: background 0.2s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.cta:hover {
+  background: #e4aa00;
+}
+
+/* hover */
+.cta:active {
+  background: #b88800;
+}

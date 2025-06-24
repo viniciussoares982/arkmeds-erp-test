@@ -3,9 +3,9 @@ import { Dialog } from '@base-ui-components/react/dialog';
 import Button from '../Button';
 import BusinessCenterIcon from '../UI/Icons/BusinessCenterIcon';
 import LocationOnIcon from '../UI/Icons/LocationOnIcon';
-import './styles.css';
 import { Company, getCompanyYield } from '@/services/companyService';
 import { getErrorMessage } from '@/utils/getErrorMessage';
+import './styles.css';
 
 type CardDialogProps = {
   dialogOpen: boolean;

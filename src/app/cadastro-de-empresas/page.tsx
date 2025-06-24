@@ -1,17 +1,14 @@
 'use client'
-
+import { useEffect, useState } from "react";
 import { Field } from '@base-ui-components/react/field';
-import "./page.css";
-import Button from '@/components/Button';
 import { useForm } from "react-hook-form";
+
+import Button from '@/components/Button';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { empresaSchema, EmpresaFormData } from "@/schemas/formEmpresasSchema";
-import { useEffect, useState } from "react";
-import { getCompanyByCnpj } from '@/services/cnpjService';
-import { createCompany } from '@/services/companyService';
-import { formatCEP } from '@/utils/formatCEP';
-import { getAddressByCep } from '@/services/cepService';
-import { getErrorMessage } from '@/utils/getErrorMessage';
+import { getCompanyByCnpj, createCompany, getAddressByCep } from '@/services';
+import { formatCEP, getErrorMessage } from '@/utils';
+import "./page.css";
 
 export default function Home() {
   const {

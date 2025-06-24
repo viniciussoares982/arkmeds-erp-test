@@ -1,10 +1,9 @@
 import Card from "@/components/Card";
-import "./page.css";
 import { listCompanies } from "@/services/companyService";
+import "./page.css";
 
 export default async function Home() {
   const companies = await listCompanies();
-  console.log(companies);
 
   return (
     <div className="container">

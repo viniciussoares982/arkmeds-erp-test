@@ -1,0 +1,5 @@
+export * from './extractMessage'
+export * from './formatCEP'
+export * from './formatCNPJ'
+export * from './getErrorMessage'
+export * from './isValidCNPJ'

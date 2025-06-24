@@ -10,10 +10,10 @@ describe('Fluxo de listagem de empresas e visualização do rendimento', () => {
   it('exibe cards, abre modal e mostra rendimento', () => {
     cy.visit('/');
 
-    cy.contains('Saboroso Sabores da Clara').should('be.visible');
+    cy.contains('Caseiro Frutas da Júlia').should('be.visible');
 
-    cy.contains('Saboroso Sabores da Clara')
-      .parents('.card')
+    cy.contains('Caseiro Frutas da Júlia')
+      .parents('.styles-module___-xRCW__card')
       .contains(/visualizar rendimento/i)
       .click();
 

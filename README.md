@@ -18,13 +18,13 @@ http://localhost:3000.
 🧠 Decisões Arquiteturais
 Tema	Motivação
 Next .js	Framework React mais robusto; roteamento e SSR nativos; ótimo para escalar.
-CSS puro + BEM	Projeto pequeno → overhead de CSS Modules não compensa; BEM mantém legibilidade.
 Base UI	Biblioteca leve dos criadores do MUI; dá liberdade para customizar sem peso extra.
 
 ✏️ UI Design
 O layout foi criado no Figma, seguindo a paleta de cores da Arkmeds.
 
 🔗 Figma – Arkmeds ERP
+https://www.figma.com/design/8jc4UXSv8H0qXRAg5n4bG7/Arkmeds-ERP?node-id=23-3525&t=TDyjFuUUm7Gl3hhB-1
 
 🛠 Funcionalidades
 📋 Cadastro

@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧪 Projeto de Teste — Cadastro e Rendimento de Empresas | Arkmeds  
 
-## Getting Started
+Este repositório demonstra um fluxo completo de **cadastro, listagem e visualização de rendimento de empresas**, desenvolvido como parte de um **teste técnico da Arkmeds**.
 
-First, run the development server:
+---
+
+## 🚀 Getting Started
 
 ```bash
+# instalar dependências
+npm install
+
+# iniciar servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A aplicação estará disponível em
+http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧠 Decisões Arquiteturais
+Tema	Motivação
+Next .js	Framework React mais robusto; roteamento e SSR nativos; ótimo para escalar.
+CSS puro + BEM	Projeto pequeno → overhead de CSS Modules não compensa; BEM mantém legibilidade.
+Base UI	Biblioteca leve dos criadores do MUI; dá liberdade para customizar sem peso extra.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✏️ UI Design
+O layout foi criado no Figma, seguindo a paleta de cores da Arkmeds.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔗 Figma – Arkmeds ERP
 
-## Learn More
+🛠 Funcionalidades
+📋 Cadastro
+Validação com React Hook Form + Zod.
 
-To learn more about Next.js, take a look at the following resources:
+Autopreenchimento via CNPJ (Arkmeds) e CEP (ViaCEP).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Máscaras invisíveis (transform) e mensagens de erro amigáveis.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📦 Listagem & Modal
+Cards das empresas carregados em SSR.
 
-## Deploy on Vercel
+Busca instantânea por CNPJ, nome fantasia ou razão social.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Modal só consulta rendimento ao abrir, exibindo valor formatado em BRL.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🔍 Busca
+Pesquisa única filtra dinamicamente os cards.
+
+Normaliza CNPJ (remove ./-) para facilitar a digitação.
+
+✅ Testes Cypress
+Intercepts para CNPJ, CEP, listagem, rendimento e criação.
+
+Pacote @testing-library/cypress para queries semânticas.
+
+Cobertura de sucesso e falha (timeouts, erros 500 etc.).
+
+🔒 Variáveis de Ambiente
+env
+Copiar
+Editar
+# .env.local
+ARKMEDS_TOKEN=seu_token_privado
+Não use NEXT_PUBLIC_ para tokens sensíveis; eles ficariam disponíveis no bundle do navegador.
+
+📁 Estrutura Principal
+bash
+Copiar
+Editar
+services/
+  ├─ cepService.ts         # ViaCEP
+  ├─ cnpjService.ts        # Arkmeds CNPJ
+  └─ companyService.ts     # Listagem / rendimento / criação
+
+components/
+  ├─ Card.tsx
+  ├─ CardDialog.tsx
+  └─ Button.tsx
+
+schemas/
+  └─ formEmpresasSchema.ts # Zod
+
+utils/
+  ├─ formatCEP.ts
+  └─ getErrorMessage.ts
+
+cypress/
+  ├─ e2e/
+  │   └─ card-modal.cy.ts  # fluxo cards + modal
+  └─ support/
+      └─ e2e.ts            # intercepts globais
+🧑‍💻 Autor
+Desenvolvido por [Seu Nome] (2025) — obrigado pela oportunidade e avaliação!
+Sinta-se à vontade para testar, sugerir melhorias ou entrar em contato.
+
+Copiar
+Editar
+
+
+
+
+
+
+
+

@@ -53,14 +53,6 @@ Pacote @testing-library/cypress para queries semânticas.
 
 Cobertura de sucesso e falha (timeouts, erros 500 etc.).
 
-🔒 Variáveis de Ambiente
-env
-Copiar
-Editar
-# .env.local
-ARKMEDS_TOKEN=seu_token_privado
-Não use NEXT_PUBLIC_ para tokens sensíveis; eles ficariam disponíveis no bundle do navegador.
-
 📁 Estrutura Principal
 bash
 Copiar
@@ -88,16 +80,5 @@ cypress/
   └─ support/
       └─ e2e.ts            # intercepts globais
 🧑‍💻 Autor
-Desenvolvido por [Seu Nome] (2025) — obrigado pela oportunidade e avaliação!
+Desenvolvido por Vinicius Soares de Almeida (2025) — obrigado pela oportunidade e avaliação!
 Sinta-se à vontade para testar, sugerir melhorias ou entrar em contato.
-
-Copiar
-Editar
-
-
-
-
-
-
-
-

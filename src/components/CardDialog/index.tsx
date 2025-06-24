@@ -5,16 +5,16 @@ import BusinessCenterIcon from '../UI/Icons/BusinessCenterIcon';
 import LocationOnIcon from '../UI/Icons/LocationOnIcon';
 import { Company, getCompanyYield } from '@/services/companyService';
 import { getErrorMessage } from '@/utils/getErrorMessage';
-import './styles.css';
+import styles from './styles.module.css';
 
 type CardDialogProps = {
   dialogOpen: boolean;
   setDialogOpen: (state: boolean) => void;
-  dadosEmpresa: Company
-}
+  dadosEmpresa: Company;
+};
 
 const CardDialog = ({ dialogOpen, setDialogOpen, dadosEmpresa }: CardDialogProps) => {
-  const { razao_social, nome_fantasia, municipio, estado, cnpj } = dadosEmpresa
+  const { razao_social, nome_fantasia, municipio, estado, cnpj } = dadosEmpresa;
 
   const [yieldValue, setYieldValue] = React.useState<number | null>(null);
   const [loading, setLoading] = React.useState(false);
@@ -49,48 +49,60 @@ const CardDialog = ({ dialogOpen, setDialogOpen, dadosEmpresa }: CardDialogProps
   return (
     <Dialog.Root open={dialogOpen} onOpenChange={setDialogOpen}>
       <Dialog.Portal>
-        <Dialog.Backdrop className='backdrop' />
-        <Dialog.Popup className='dialog'>
-          <div className="dialog__header">
-            <div className="dialog__icon">
+        <Dialog.Backdrop className={styles.backdrop} />
+        <Dialog.Popup className={styles.dialog}>
+          <div className={styles["dialog__header"]}>
+            <div className={styles["dialog__icon"]}>
               <BusinessCenterIcon />
             </div>
             <div>
-              <Dialog.Title className='dialog__title'>{nome_fantasia}</Dialog.Title>
-              <Dialog.Description className='dialog__subtitle'>
+              <Dialog.Title className={styles["dialog__title"]}>
+                {nome_fantasia}
+              </Dialog.Title>
+              <Dialog.Description className={styles["dialog__subtitle"]}>
                 {razao_social}
               </Dialog.Description>
             </div>
           </div>
-          <hr className="dialog__divider" />
-          <section className="dialog__location">
+
+          <hr className={styles["dialog__divider"]} />
+
+          <section className={styles["dialog__location"]}>
             <LocationOnIcon />
             <span>{municipio}</span>
             <span>{estado}</span>
           </section>
-          <span className='dialog__cnpj'><strong>CNPJ:</strong> {cnpj}</span>
-          <hr className="dialog__divider" />
-          <div className="dialog__current-yield">
+
+          <span className={styles["dialog__cnpj"]}>
+            <strong>CNPJ:</strong> {cnpj}
+          </span>
+
+          <hr className={styles["dialog__divider"]} />
+
+          <div className={styles["dialog__current-yield"]}>
             {loading ? (
-              <span className="current-yield__loading">Carregando...</span>
+              <span className={styles["current-yield__loading"]}>Carregando...</span>
             ) : error ? (
-              <span className="current-yield__error">{error}</span>
+              <span className={styles["current-yield__error"]}>{error}</span>
             ) : yieldValue !== null ? (
               <>
-                <span className="current-yield__numbers">
+                <span className={styles["current-yield__numbers"]}>
                   {formatBRL(yieldValue)}
                 </span>
-                <span className="current-yield__title">Rendimento Atual</span>
+                <span className={styles["current-yield__title"]}>
+                  Rendimento Atual
+                </span>
               </>
             ) : (
-              <span className="current-yield__numbers">—</span>
+              <span className={styles["current-yield__numbers"]}>—</span>
             )}
           </div>
-          <Button title='Fechar' onClick={() => setDialogOpen(false)} />
+
+          <Button title="Fechar" onClick={() => setDialogOpen(false)} />
         </Dialog.Popup>
       </Dialog.Portal>
-    </Dialog.Root >
+    </Dialog.Root>
   );
-}
+};
 
-export default CardDialog
+export default CardDialog;

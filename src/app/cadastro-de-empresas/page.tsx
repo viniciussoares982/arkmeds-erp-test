@@ -192,12 +192,12 @@ export default function Home() {
             </Field.Error>}
           </Field.Root>
           {submitError && <div className="form__error-alert">
-            <p className="form__error-message">{submitError}</p>
+            <p className="form__error-message-alert">{submitError}</p>
           </div>}
           {submitSuccess && <div className="form__success-alert">
             <p className="form__success-message">Empresa cadastrada com sucesso!</p>
           </div>}
-          <Button type="submit" title='Enviar' />
+          <Button type="submit" title={submitLoading ? 'Enviando...' : 'Enviar'} disabled={submitLoading} />
         </div>
       </form>
     </div>

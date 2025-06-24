@@ -132,7 +132,7 @@ export default function Home() {
           <Field.Root>
             <Field.Label className={styles['form__label']}>CNPJ</Field.Label>
             <Field.Control
-              {...register("cnpj")}
+              {...register("cnpj", { required: true })}
               aria-busy={arkLoading}
               className={styles['form__input']}
               placeholder="As informações do seu CNPJ serão buscadas automaticamente"
@@ -147,7 +147,7 @@ export default function Home() {
 
           <Field.Root>
             <Field.Label className={styles['form__label']}>Razão Social</Field.Label>
-            <Field.Control {...register("razaoSocial")} className={styles['form__input']} required />
+            <Field.Control {...register("razaoSocial", { required: true })} className={styles['form__input']} required />
             {errors.razaoSocial && (
               <Field.Error className={styles['form__error-message']} match>
                 {errors.razaoSocial.message}
@@ -157,7 +157,7 @@ export default function Home() {
 
           <Field.Root>
             <Field.Label className={styles['form__label']}>Nome Fantasia</Field.Label>
-            <Field.Control {...register("nomeFantasia")} className={styles['form__input']} required />
+            <Field.Control {...register("nomeFantasia", { required: true })} className={styles['form__input']} required />
             {errors.nomeFantasia && (
               <Field.Error className={styles['form__error-message']} match>
                 {errors.nomeFantasia.message}
@@ -172,7 +172,7 @@ export default function Home() {
           <Field.Root>
             <Field.Label className={styles['form__label']}>CEP</Field.Label>
             <Field.Control
-              {...register("cep")}
+              {...register("cep", { required: true })}
               aria-busy={viaCepLoading}
               className={styles['form__input']}
               placeholder="As informações do seu CEP serão buscadas automaticamente"
@@ -187,7 +187,7 @@ export default function Home() {
 
           <Field.Root>
             <Field.Label className={styles['form__label']}>Estado</Field.Label>
-            <Field.Control {...register("estado")} className={styles['form__input']} required />
+            <Field.Control {...register("estado", { required: true })} className={styles['form__input']} required />
             {errors.estado && (
               <Field.Error className={styles['form__error-message']} match>
                 {errors.estado.message}
@@ -197,7 +197,7 @@ export default function Home() {
 
           <Field.Root>
             <Field.Label className={styles['form__label']}>Municipio</Field.Label>
-            <Field.Control {...register("municipio")} className={styles['form__input']} required />
+            <Field.Control {...register("municipio", { required: true })} className={styles['form__input']} required />
             {errors.municipio && (
               <Field.Error className={styles['form__error-message']} match>
                 {errors.municipio.message}

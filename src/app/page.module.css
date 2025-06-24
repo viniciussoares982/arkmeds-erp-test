@@ -17,8 +17,58 @@
 }
 
 .cards {
-  margin-top: 32px;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 16px;
   gap: 24px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+.pageLink {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background 0.15s;
+}
+
+.pageLink[aria-disabled='true'] {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+
+.pageInfo {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font--lato);
+}
+
+.search__form {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.search__input {
+  font-family: var(--font--lato);
+  height: 42px;
+  width: 200px;
+  font-weight: 700;
+  background-color: var(--color-neutral-100);
+  border: 1px solid var(--color-primary-200);
+  border-radius: 8px;
+  padding-left: 16px;
+  font-size: 16px;
+
+  &:focus {
+    outline-offset: -1px;
+  }
 }

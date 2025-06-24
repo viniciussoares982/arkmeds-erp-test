@@ -5,7 +5,7 @@ export function getErrorMessage(err: unknown, fallback = 'Erro inesperado'): str
     return err.response?.data?.message ?? err.message;
   }
   if (err instanceof Error) {
-    return err.message;
+    return 'Erro ao enviar o formulário';
   }
   return fallback;
 }

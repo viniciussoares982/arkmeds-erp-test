@@ -3,6 +3,7 @@ import { Lato, Nunito } from "next/font/google";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import "./globals.css";
+import { Providers } from "@/providers/providers";
 
 const getLato = Lato({
   variable: "--font--lato",
@@ -26,14 +27,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="pt-BR">
       <body className={`root ${getLato.variable} ${getNunito.variable}`}>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
